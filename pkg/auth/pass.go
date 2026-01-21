@@ -15,7 +15,7 @@
 package auth
 
 import (
-	"github.com/fatedier/frp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
 )
 
 var AlwaysPassVerifier = &alwaysPass{}

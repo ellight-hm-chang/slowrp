@@ -15,13 +15,13 @@
 package controller
 
 import (
-	"github.com/fatedier/frp/pkg/nathole"
-	plugin "github.com/fatedier/frp/pkg/plugin/server"
-	"github.com/fatedier/frp/pkg/util/tcpmux"
-	"github.com/fatedier/frp/pkg/util/vhost"
-	"github.com/fatedier/frp/server/group"
-	"github.com/fatedier/frp/server/ports"
-	"github.com/fatedier/frp/server/visitor"
+	"github.com/ellight-hm-chang/slowrp/pkg/nathole"
+	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/tcpmux"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
+	"github.com/ellight-hm-chang/slowrp/server/group"
+	"github.com/ellight-hm-chang/slowrp/server/ports"
+	"github.com/ellight-hm-chang/slowrp/server/visitor"
 )
 
 // All resource managers and controllers

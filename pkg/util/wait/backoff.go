@@ -19,7 +19,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/fatedier/frp/pkg/util/util"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
 )
 
 type BackoffFunc func(previousDuration time.Duration, previousConditionError bool) time.Duration

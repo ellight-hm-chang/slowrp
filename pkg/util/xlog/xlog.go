@@ -17,7 +17,7 @@ package xlog
 import (
 	"sort"
 
-	"github.com/fatedier/frp/pkg/util/log"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
 )
 
 type LogPrefix struct {

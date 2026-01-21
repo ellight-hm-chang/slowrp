@@ -4,14 +4,14 @@ LDFLAGS := -s -w
 
 all: fmt build
 
-build: frps frpc
+build: slowrps slowrpc
 
 # compile assets into binary file
 file:
-	rm -rf ./assets/frps/static/*
-	rm -rf ./assets/frpc/static/*
-	cp -rf ./web/frps/dist/* ./assets/frps/static
-	cp -rf ./web/frpc/dist/* ./assets/frpc/static
+	rm -rf ./assets/slowrps/static/*
+	rm -rf ./assets/slowrpc/static/*
+	cp -rf ./web/slowrps/dist/* ./assets/slowrps/static
+	cp -rf ./web/slowrpc/dist/* ./assets/slowrpc/static
 
 fmt:
 	go fmt ./...
@@ -20,16 +20,16 @@ fmt-more:
 	gofumpt -l -w .
 
 gci:
-	gci write -s standard -s default -s "prefix(github.com/fatedier/frp/)" ./
+	gci write -s standard -s default -s "prefix(github.com/ellight-hm-chang/slowrp/)" ./
 
 vet:
 	go vet ./...
 
-frps:
-	env CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -tags frps -o bin/frps ./cmd/frps
+slowrps:
+	env CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -tags slowrps -o bin/slowrps ./cmd/slowrps
 
-frpc:
-	env CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -tags frpc -o bin/frpc ./cmd/frpc
+slowrpc:
+	env CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -tags slowrpc -o bin/slowrpc ./cmd/slowrpc
 
 test: gotest
 
@@ -46,23 +46,23 @@ e2e:
 e2e-trace:
 	DEBUG=true LOG_LEVEL=trace ./hack/run-e2e.sh
 
-e2e-compatibility-last-frpc:
+e2e-compatibility-last-slowrpc:
 	if [ ! -d "./lastversion" ]; then \
 		TARGET_DIRNAME=lastversion ./hack/download.sh; \
 	fi
-	FRPC_PATH="`pwd`/lastversion/frpc" ./hack/run-e2e.sh
+	SLOWRPC_PATH="`pwd`/lastversion/slowrpc" ./hack/run-e2e.sh
 	rm -r ./lastversion
 
-e2e-compatibility-last-frps:
+e2e-compatibility-last-slowrps:
 	if [ ! -d "./lastversion" ]; then \
 		TARGET_DIRNAME=lastversion ./hack/download.sh; \
 	fi
-	FRPS_PATH="`pwd`/lastversion/frps" ./hack/run-e2e.sh
+	SLOWRPS_PATH="`pwd`/lastversion/slowrps" ./hack/run-e2e.sh
 	rm -r ./lastversion
 
 alltest: vet gotest e2e
 	
 clean:
-	rm -f ./bin/frpc
-	rm -f ./bin/frps
+	rm -f ./bin/slowrpc
+	rm -f ./bin/slowrps
 	rm -rf ./lastversion

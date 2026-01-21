@@ -1,6 +1,8 @@
-module github.com/fatedier/frp
+module github.com/ellight-hm-chang/slowrp
 
-go 1.20
+go 1.21
+
+toolchain go1.24.2
 
 require (
 	github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5
@@ -23,9 +25,9 @@ require (
 	github.com/samber/lo v1.38.1
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.8.4
-	golang.org/x/crypto v0.15.0
-	golang.org/x/net v0.17.0
+	github.com/stretchr/testify v1.9.0
+	golang.org/x/crypto v0.22.0
+	golang.org/x/net v0.24.0
 	golang.org/x/oauth2 v0.10.0
 	golang.org/x/sync v0.3.0
 	golang.org/x/time v0.3.0
@@ -48,8 +50,8 @@ require (
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/pprof v0.0.0-20210720184732-4bb14d4b1be1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/klauspost/cpuid/v2 v2.0.6 // indirect
-	github.com/klauspost/reedsolomon v1.9.15 // indirect
+	github.com/klauspost/cpuid/v2 v2.2.6 // indirect
+	github.com/klauspost/reedsolomon v1.12.0 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/pion/dtls/v2 v2.2.7 // indirect
@@ -67,7 +69,7 @@ require (
 	github.com/tjfoc/gmsm v1.4.1 // indirect
 	golang.org/x/exp v0.0.0-20221205204356-47842c84f3db // indirect
 	golang.org/x/mod v0.10.0 // indirect
-	golang.org/x/sys v0.14.0 // indirect
+	golang.org/x/sys v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.9.3 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
@@ -81,3 +83,6 @@ require (
 
 // TODO(fatedier): Temporary use the modified version, update to the official version after merging into the official repository.
 replace github.com/hashicorp/yamux => github.com/fatedier/yamux v0.0.0-20230628132301-7aca4898904d
+
+// Use forked golib
+replace github.com/fatedier/golib => github.com/ellight-hm-chang/golib v0.1.1-0.20230725122706-dcbaee8eef40

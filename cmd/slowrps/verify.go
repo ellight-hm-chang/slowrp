@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package sub
+package main
 
 import (
 	"fmt"
@@ -20,8 +20,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fatedier/frp/pkg/config"
-	"github.com/fatedier/frp/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/slowrp/pkg/config"
+	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
 )
 
 func init() {
@@ -33,16 +33,16 @@ var verifyCmd = &cobra.Command{
 	Short: "Verify that the configures is valid",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if cfgFile == "" {
-			fmt.Println("frpc: the configuration file is not specified")
+			fmt.Println("frps: the configuration file is not specified")
 			return nil
 		}
-
-		cliCfg, proxyCfgs, visitorCfgs, _, err := config.LoadClientConfig(cfgFile, strictConfigMode)
+		svrCfg, _, err := config.LoadServerConfig(cfgFile, strictConfigMode)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		warning, err := validation.ValidateAllClientConfig(cliCfg, proxyCfgs, visitorCfgs)
+
+		warning, err := validation.ValidateServerConfig(svrCfg)
 		if warning != nil {
 			fmt.Printf("WARNING: %v\n", warning)
 		}
@@ -50,8 +50,7 @@ var verifyCmd = &cobra.Command{
 			fmt.Println(err)
 			os.Exit(1)
 		}
-
-		fmt.Printf("frpc: the configuration file %s syntax is ok\n", cfgFile)
+		fmt.Printf("frps: the configuration file %s syntax is ok\n", cfgFile)
 		return nil
 	},
 }

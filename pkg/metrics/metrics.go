@@ -15,7 +15,7 @@
 package metrics
 
 import (
-	"github.com/fatedier/frp/pkg/metrics/aggregate"
+	"github.com/ellight-hm-chang/slowrp/pkg/metrics/aggregate"
 )
 
 var (

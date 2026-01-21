@@ -20,8 +20,8 @@ import (
 	"net/http"
 	"os"
 
-	logpkg "github.com/fatedier/frp/pkg/util/log"
-	"github.com/fatedier/frp/pkg/util/version"
+	logpkg "github.com/ellight-hm-chang/slowrp/pkg/util/log"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
 )
 
 var NotFoundPagePath = ""

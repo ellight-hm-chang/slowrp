@@ -25,12 +25,12 @@ import (
 	"github.com/fatedier/golib/errors"
 	libio "github.com/fatedier/golib/io"
 
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/proto/udp"
-	netpkg "github.com/fatedier/frp/pkg/util/net"
-	"github.com/fatedier/frp/pkg/util/util"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/proto/udp"
+	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
 )
 
 type SUDPVisitor struct {

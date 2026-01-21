@@ -6,7 +6,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/fatedier/frp/pkg/util/vhost"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
 )
 
 type HTTPGroupController struct {

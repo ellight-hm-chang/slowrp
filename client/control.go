@@ -22,15 +22,15 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/fatedier/frp/client/proxy"
-	"github.com/fatedier/frp/client/visitor"
-	"github.com/fatedier/frp/pkg/auth"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/transport"
-	netpkg "github.com/fatedier/frp/pkg/util/net"
-	"github.com/fatedier/frp/pkg/util/wait"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/slowrp/client/proxy"
+	"github.com/ellight-hm-chang/slowrp/client/visitor"
+	"github.com/ellight-hm-chang/slowrp/pkg/auth"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/transport"
+	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/wait"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
 )
 
 type SessionContext struct {

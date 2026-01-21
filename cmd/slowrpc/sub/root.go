@@ -27,12 +27,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fatedier/frp/client"
-	"github.com/fatedier/frp/pkg/config"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/config/v1/validation"
-	"github.com/fatedier/frp/pkg/util/log"
-	"github.com/fatedier/frp/pkg/util/version"
+	"github.com/ellight-hm-chang/slowrp/client"
+	"github.com/ellight-hm-chang/slowrp/pkg/config"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
 )
 
 var (
@@ -50,7 +50,7 @@ func init() {
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "frpc",
+	Use:   "slowrpc",
 	Short: "frpc is the client of frp (https://github.com/fatedier/frp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {

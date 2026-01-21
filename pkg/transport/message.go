@@ -21,7 +21,7 @@ import (
 
 	"github.com/fatedier/golib/errors"
 
-	"github.com/fatedier/frp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
 )
 
 type MessageTransporter interface {

@@ -25,12 +25,12 @@ import (
 
 	"github.com/fatedier/golib/errors"
 
-	"github.com/fatedier/frp/client/event"
-	"github.com/fatedier/frp/client/health"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/transport"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/slowrp/client/event"
+	"github.com/ellight-hm-chang/slowrp/client/health"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/transport"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
 )
 
 const (

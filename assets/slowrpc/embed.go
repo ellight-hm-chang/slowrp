@@ -1,9 +1,9 @@
-package frpc
+package slowrpc
 
 import (
 	"embed"
 
-	"github.com/fatedier/frp/assets"
+	"github.com/ellight-hm-chang/slowrp/assets"
 )
 
 //go:embed static/*

@@ -30,15 +30,15 @@ import (
 	flag "github.com/spf13/pflag"
 	"golang.org/x/crypto/ssh"
 
-	"github.com/fatedier/frp/client/proxy"
-	"github.com/fatedier/frp/pkg/config"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/util/log"
-	netpkg "github.com/fatedier/frp/pkg/util/net"
-	"github.com/fatedier/frp/pkg/util/util"
-	"github.com/fatedier/frp/pkg/util/xlog"
-	"github.com/fatedier/frp/pkg/virtual"
+	"github.com/ellight-hm-chang/slowrp/client/proxy"
+	"github.com/ellight-hm-chang/slowrp/pkg/config"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
+	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/slowrp/pkg/virtual"
 )
 
 const (

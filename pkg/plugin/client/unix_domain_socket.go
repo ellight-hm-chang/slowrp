@@ -22,7 +22,7 @@ import (
 
 	libio "github.com/fatedier/golib/io"
 
-	v1 "github.com/fatedier/frp/pkg/config/v1"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
 )
 
 func init() {

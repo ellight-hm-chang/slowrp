@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"time"
 
-	flog "github.com/fatedier/frp/pkg/util/log"
-	"github.com/fatedier/frp/test/e2e/pkg/process"
+	flog "github.com/ellight-hm-chang/slowrp/pkg/util/log"
+	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/process"
 )
 
 // RunProcesses run multiple processes from templates.

@@ -23,7 +23,7 @@ import (
 	"github.com/fatedier/golib/errors"
 	"github.com/fatedier/golib/pool"
 
-	"github.com/fatedier/frp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
 )
 
 func NewUDPPacket(buf []byte, laddr, raddr *net.UDPAddr) *msg.UDPPacket {

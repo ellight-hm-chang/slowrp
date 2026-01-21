@@ -18,9 +18,9 @@ import (
 	"reflect"
 	"strings"
 
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/util/util"
-	"github.com/fatedier/frp/pkg/util/vhost"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
 )
 
 func init() {

@@ -1,4 +1,4 @@
-// Copyright 2018 fatedier, fatedier@gmail.com
+// Copyright 2016 fatedier, fatedier@gmail.com
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,13 +15,10 @@
 package main
 
 import (
-	"github.com/fatedier/golib/crypto"
-
-	_ "github.com/fatedier/frp/assets/frps"
-	_ "github.com/fatedier/frp/pkg/metrics"
+	_ "github.com/ellight-hm-chang/slowrp/assets/slowrpc"
+	"github.com/ellight-hm-chang/slowrp/cmd/slowrpc/sub"
 )
 
 func main() {
-	crypto.DefaultSalt = "frp"
-	Execute()
+	sub.Execute()
 }

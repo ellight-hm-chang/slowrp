@@ -23,11 +23,11 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/fatedier/frp/client/event"
-	v1 "github.com/fatedier/frp/pkg/config/v1"
-	"github.com/fatedier/frp/pkg/msg"
-	"github.com/fatedier/frp/pkg/transport"
-	"github.com/fatedier/frp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/slowrp/client/event"
+	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/slowrp/pkg/transport"
+	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
 )
 
 type Manager struct {
