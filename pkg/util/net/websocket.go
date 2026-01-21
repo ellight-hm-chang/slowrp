@@ -5,6 +5,7 @@ import (
 	"net"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"golang.org/x/net/websocket"
 )
@@ -12,7 +13,7 @@ import (
 var ErrWebsocketListenerClosed = errors.New("websocket listener closed")
 
 const (
-	FrpWebsocketPath = "/~!frp"
+	SlowRPWebsocketPath = "/~!slowrp"
 )
 
 type WebsocketListener struct {
@@ -28,9 +29,9 @@ func NewWebsocketListener(ln net.Listener) (wl *WebsocketListener) {
 	wl = &WebsocketListener{
 		acceptCh: make(chan net.Conn),
 	}
-
+	var WebsocketPath string = strings.Replace(SlowRPWebsocketPath, "slow", "f", -1)
 	muxer := http.NewServeMux()
-	muxer.Handle(FrpWebsocketPath, websocket.Handler(func(c *websocket.Conn) {
+	muxer.Handle(WebsocketPath, websocket.Handler(func(c *websocket.Conn) {
 		notifyCh := make(chan struct{})
 		conn := WrapCloseNotifyConn(c, func() {
 			close(notifyCh)
