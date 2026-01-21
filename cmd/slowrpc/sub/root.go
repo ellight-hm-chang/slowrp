@@ -43,15 +43,15 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./frpc.ini", "config file of frpc")
-	rootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one frpc service for each file in config directory")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of frpc")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./slowrpc.ini", "config file of slowrpc")
+	rootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one slowrpc service for each file in config directory")
+	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of slowrpc")
 	rootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", false, "strict config parsing mode, unknown fields will cause an error")
 }
 
 var rootCmd = &cobra.Command{
 	Use:   "slowrpc",
-	Short: "frpc is the client of frp (https://github.com/fatedier/frp)",
+	Short: "slowrpc is the client of slowrp (https://github.com/ellight-hm-chang/slowrp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())
@@ -87,7 +87,7 @@ func runMultipleClients(cfgDir string) error {
 			defer wg.Done()
 			err := runClient(path)
 			if err != nil {
-				fmt.Printf("frpc service error for config file [%s]\n", path)
+				fmt.Printf("slowrpc service error for config file [%s]\n", path)
 			}
 		}()
 		return nil
@@ -138,8 +138,8 @@ func startService(
 	log.InitLog(cfg.Log.To, cfg.Log.Level, cfg.Log.MaxDays, cfg.Log.DisablePrintColor)
 
 	if cfgFile != "" {
-		log.Info("start frpc service for config file [%s]", cfgFile)
-		defer log.Info("frpc service for config file [%s] stopped", cfgFile)
+		log.Info("start slowrpc service for config file [%s]", cfgFile)
+		defer log.Info("slowrpc service for config file [%s] stopped", cfgFile)
 	}
 	svr, err := client.NewService(client.ServiceOptions{
 		Common:         cfg,

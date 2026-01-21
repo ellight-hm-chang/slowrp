@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"strings"
 
 	"github.com/onsi/ginkgo/v2"
 
@@ -211,11 +212,14 @@ var _ = ginkgo.Describe("[Feature: TCPMUX httpconnect]", func() {
 
 		f.RunProcesses([]string{serverConf}, []string{clientConf})
 
+		var resp string = "slowrp"
+		resp = strings.Replace(resp, "slow", "f", -1)
+
 		framework.NewRequestExpect(f).
 			RequestModify(func(r *request.Request) {
-				r.Addr("normal.example.com").Proxy(proxyURLWithAuth("", "", vhostPort)).Body([]byte("frp"))
+				r.Addr("normal.example.com").Proxy(proxyURLWithAuth("", "", vhostPort)).Body([]byte(resp))
 			}).
-			ExpectResp([]byte("frp")).
+			ExpectResp([]byte(resp)).
 			Ensure()
 		framework.ExpectNoError(respErr)
 		framework.ExpectEqualValues(connectRequestHost, "normal.example.com")

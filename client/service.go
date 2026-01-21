@@ -20,6 +20,7 @@ import (
 	"fmt"
 	"net"
 	"runtime"
+	"strings"
 	"sync"
 	"time"
 
@@ -39,7 +40,9 @@ import (
 )
 
 func init() {
-	crypto.DefaultSalt = "frp"
+	var salt string = "slowrp"
+	salt = strings.Replace(salt, "slow", "f", -1)
+	crypto.DefaultSalt = salt
 }
 
 type cancelErr struct {

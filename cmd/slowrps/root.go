@@ -38,8 +38,8 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file of frps")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of frps")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file of slowrps")
+	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of slowrps")
 	rootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", false, "strict config parsing mode, unknown fields will cause error")
 
 	config.RegisterServerConfigFlags(rootCmd, &serverCfg)
@@ -47,7 +47,7 @@ func init() {
 
 var rootCmd = &cobra.Command{
 	Use:   "slowrps",
-	Short: "frps is the server of frp (https://github.com/fatedier/frp)",
+	Short: "slowrps is the server of slowrp (https://github.com/ellight-hm-chang/slowrp)",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())
@@ -101,16 +101,16 @@ func runServer(cfg *v1.ServerConfig) (err error) {
 	log.InitLog(cfg.Log.To, cfg.Log.Level, cfg.Log.MaxDays, cfg.Log.DisablePrintColor)
 
 	if cfgFile != "" {
-		log.Info("frps uses config file: %s", cfgFile)
+		log.Info("slowrps uses config file: %s", cfgFile)
 	} else {
-		log.Info("frps uses command line arguments for config")
+		log.Info("slowrps uses command line arguments for config")
 	}
 
 	svr, err := server.NewService(cfg)
 	if err != nil {
 		return err
 	}
-	log.Info("frps started successfully")
+	log.Info("slowrps started successfully")
 	svr.Run(context.Background())
 	return
 }

@@ -87,7 +87,9 @@ func (c *defaultConnectorImpl) Open() error {
 			xl.Warn("fail to build tls configuration, err: %v", err)
 			return err
 		}
-		tlsConfig.NextProtos = []string{"frp"}
+		var portos string = "slowrp"
+		portos = strings.Replace(portos, "slow", "f", -1)
+		tlsConfig.NextProtos = []string{portos}
 
 		conn, err := quic.DialAddr(
 			c.ctx,

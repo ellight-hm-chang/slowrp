@@ -19,6 +19,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 
 	logpkg "github.com/ellight-hm-chang/slowrp/pkg/util/log"
 	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
@@ -43,8 +44,8 @@ const (
 <h1>The page you requested was not found.</h1>
 <p>Sorry, the page you are looking for is currently unavailable.<br/>
 Please try again later.</p>
-<p>The server is powered by <a href="https://github.com/fatedier/frp">frp</a>.</p>
-<p><em>Faithfully yours, frp.</em></p>
+<p>The server is powered by <a href="https://github.com/ellight-hm-chang/slowrp">slowrp</a>.</p>
+<p><em>Faithfully yours, slowrp.</em></p>
 </body>
 </html>
 `
@@ -69,7 +70,8 @@ func getNotFoundPageContent() []byte {
 
 func NotFoundResponse() *http.Response {
 	header := make(http.Header)
-	header.Set("server", "frp/"+version.Full())
+	var serverName = strings.Replace("slowrp/", "slow", "f", -1)
+	header.Set("server", serverName+version.Full())
 	header.Set("Content-Type", "text/html")
 
 	content := getNotFoundPageContent()

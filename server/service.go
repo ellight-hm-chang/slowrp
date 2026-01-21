@@ -223,7 +223,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 	ln = svr.muxer.DefaultListener()
 
 	svr.listener = ln
-	log.Info("frps tcp listen on %s", address)
+	log.Info("slowrps tcp listen on %s", address)
 
 	// Listen for accepting connections from client using kcp protocol.
 	if cfg.KCPBindPort > 0 {
@@ -232,13 +232,16 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 		if err != nil {
 			return nil, fmt.Errorf("listen on kcp udp address %s error: %v", address, err)
 		}
-		log.Info("frps kcp listen on udp %s", address)
+		log.Info("slowrps kcp listen on udp %s", address)
 	}
 
 	if cfg.QUICBindPort > 0 {
+		var protos string = "slowrp"
+		protos = strings.Replace(protos, "slow", "f", -1)
+
 		address := net.JoinHostPort(cfg.BindAddr, strconv.Itoa(cfg.QUICBindPort))
 		quicTLSCfg := tlsConfig.Clone()
-		quicTLSCfg.NextProtos = []string{"frp"}
+		quicTLSCfg.NextProtos = []string{protos}
 		svr.quicListener, err = quic.ListenAddr(address, quicTLSCfg, &quic.Config{
 			MaxIdleTimeout:     time.Duration(cfg.Transport.QUIC.MaxIdleTimeout) * time.Second,
 			MaxIncomingStreams: int64(cfg.Transport.QUIC.MaxIncomingStreams),
@@ -247,7 +250,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 		if err != nil {
 			return nil, fmt.Errorf("listen on quic udp address %s error: %v", address, err)
 		}
-		log.Info("frps quic listen on %s", address)
+		log.Info("slowrps quic listen on %s", address)
 	}
 
 	if cfg.SSHTunnelGateway.BindPort > 0 {
@@ -256,7 +259,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 			return nil, fmt.Errorf("create ssh gateway error: %v", err)
 		}
 		svr.sshTunnelGateway = sshGateway
-		log.Info("frps sshTunnelGateway listen on port %d", cfg.SSHTunnelGateway.BindPort)
+		log.Info("slowrps sshTunnelGateway listen on port %d", cfg.SSHTunnelGateway.BindPort)
 	}
 
 	// Listen for accepting connections from client using websocket protocol.

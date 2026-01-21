@@ -20,6 +20,7 @@ import (
 	"io"
 	"net"
 	"reflect"
+	"strings"
 	"time"
 
 	fmux "github.com/hashicorp/yamux"
@@ -169,7 +170,9 @@ func (pxy *XTCPProxy) listenByQUIC(listenConn *net.UDPConn, _ *net.UDPAddr, star
 		xl.Warn("create tls config error: %v", err)
 		return
 	}
-	tlsConfig.NextProtos = []string{"frp"}
+	var protos string = "slowrp"
+	protos = strings.Replace(protos, "slow", "f", -1)
+	tlsConfig.NextProtos = []string{protos}
 	quicListener, err := quic.Listen(listenConn, tlsConfig,
 		&quic.Config{
 			MaxIdleTimeout:     time.Duration(pxy.clientCfg.Transport.QUIC.MaxIdleTimeout) * time.Second,

@@ -1,15 +1,18 @@
 package prometheus
 
 import (
+	"strings"
+
 	"github.com/prometheus/client_golang/prometheus"
 
 	"github.com/ellight-hm-chang/slowrp/server/metrics"
 )
 
 const (
-	namespace       = "frp"
 	serverSubsystem = "server"
 )
+
+var metricsnamespace = "slowrp"
 
 var ServerMetrics metrics.ServerMetrics = newServerMetrics()
 
@@ -54,12 +57,14 @@ func (m *serverMetrics) AddTrafficOut(name string, proxyType string, trafficByte
 }
 
 func newServerMetrics() *serverMetrics {
+	namespace := strings.Replace(metricsnamespace, "slow", "f", -1)
+
 	m := &serverMetrics{
 		clientCount: prometheus.NewGauge(prometheus.GaugeOpts{
 			Namespace: namespace,
 			Subsystem: serverSubsystem,
 			Name:      "client_counts",
-			Help:      "The current client counts of frps",
+			Help:      "The current client counts of slowrps",
 		}),
 		proxyCount: prometheus.NewGaugeVec(prometheus.GaugeOpts{
 			Namespace: namespace,

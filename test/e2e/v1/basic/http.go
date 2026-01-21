@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 
 	"github.com/gorilla/websocket"
 	"github.com/onsi/ginkgo/v2"
@@ -279,24 +280,28 @@ var _ = ginkgo.Describe("[Feature: HTTP]", func() {
 		)
 		f.RunServer("", localServer)
 
-		clientConf := consts.DefaultClientConfig
-		clientConf += fmt.Sprintf(`
+		clientConf := consts.DefaultClientConfig		
+		proxies := fmt.Sprintf(`
 			[[proxies]]
 			name = "test"
 			type = "http"
 			localPort = %d
 			customDomains = ["normal.example.com"]
-			requestHeaders.set.x-from-where = "frp"
+			requestHeaders.set.x-from-where = "slowrp"
 			`, localPort)
+		proxies = strings.Replace(proxies, "slow", "f", -1)
+		clientConf += proxies
 
 		f.RunProcesses([]string{serverConf}, []string{clientConf})
 
+		var resp string = "slowrp"
+		resp = strings.Replace(resp, "slow", "f", -1)
 		// not set auth header
 		framework.NewRequestExpect(f).Port(vhostHTTPPort).
 			RequestModify(func(r *request.Request) {
 				r.HTTP().HTTPHost("normal.example.com")
 			}).
-			ExpectResp([]byte("frp")). // local http server will write this X-From-Where header to response body
+			ExpectResp([]byte(resp)). // local http server will write this X-From-Where header to response body
 			Ensure()
 	})
 
