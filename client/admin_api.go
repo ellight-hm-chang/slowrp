@@ -91,20 +91,20 @@ func (svr *Service) apiReload(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("reload frpc proxy config error: %s", res.Msg)
+		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
 		return
 	}
 	if _, err := validation.ValidateAllClientConfig(cliCfg, proxyCfgs, visitorCfgs); err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("reload frpc proxy config error: %s", res.Msg)
+		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
 		return
 	}
 
 	if err := svr.UpdateAllConfigurer(proxyCfgs, visitorCfgs); err != nil {
 		res.Code = 500
 		res.Msg = err.Error()
-		log.Warn("reload frpc proxy config error: %s", res.Msg)
+		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
 		return
 	}
 	log.Info("success reload conf")
@@ -211,7 +211,7 @@ func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request) {
 
 	if svr.configFilePath == "" {
 		res.Code = 400
-		res.Msg = "frpc has no config file path"
+		res.Msg = "slowrpc has no config file path"
 		log.Warn("%s", res.Msg)
 		return
 	}
@@ -220,7 +220,7 @@ func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("load frpc config file error: %s", res.Msg)
+		log.Warn("load slowrpc config file error: %s", res.Msg)
 		return
 	}
 	res.Msg = string(content)
@@ -257,7 +257,7 @@ func (svr *Service) apiPutConfig(w http.ResponseWriter, r *http.Request) {
 
 	if err := os.WriteFile(svr.configFilePath, body, 0o644); err != nil {
 		res.Code = 500
-		res.Msg = fmt.Sprintf("write content to frpc config file error: %v", err)
+		res.Msg = fmt.Sprintf("write content to slowrpc config file error: %v", err)
 		log.Warn("%s", res.Msg)
 		return
 	}

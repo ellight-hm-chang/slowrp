@@ -30,7 +30,7 @@ import (
 func init() {
 	rootCmd.AddCommand(NewAdminCommand(
 		"reload",
-		"Hot-Reload frpc configuration",
+		"Hot-Reload slowrpc configuration",
 		ReloadHandler,
 	))
 
@@ -42,7 +42,7 @@ func init() {
 
 	rootCmd.AddCommand(NewAdminCommand(
 		"stop",
-		"Stop the running frpc",
+		"Stop the running slowrpc",
 		StopHandler,
 	))
 }
