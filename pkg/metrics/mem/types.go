@@ -17,7 +17,7 @@ package mem
 import (
 	"time"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/metric"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/metric"
 )
 
 const (

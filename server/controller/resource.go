@@ -15,13 +15,13 @@
 package controller
 
 import (
-	"github.com/ellight-hm-chang/slowrp/pkg/nathole"
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/tcpmux"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
-	"github.com/ellight-hm-chang/slowrp/server/group"
-	"github.com/ellight-hm-chang/slowrp/server/ports"
-	"github.com/ellight-hm-chang/slowrp/server/visitor"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/nathole"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/tcpmux"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/vhost"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/group"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/ports"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/visitor"
 )
 
 // All resource managers and controllers

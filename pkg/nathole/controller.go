@@ -28,10 +28,10 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
 )
 
 // NatHoleTimeout seconds.

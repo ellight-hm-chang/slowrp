@@ -26,11 +26,11 @@ import (
 	fmux "github.com/hashicorp/yamux"
 	"github.com/quic-go/quic-go"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/nathole"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/nathole"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
 )
 
 func init() {
@@ -170,8 +170,8 @@ func (pxy *XTCPProxy) listenByQUIC(listenConn *net.UDPConn, _ *net.UDPAddr, star
 		xl.Warn("create tls config error: %v", err)
 		return
 	}
-	var protos string = "slowrp"
-	protos = strings.Replace(protos, "slow", "f", -1)
+	var protos string = "VORTEX_Accessrp"
+	protos = strings.Replace(protos, "VORTEX_Access", "f", -1)
 	tlsConfig.NextProtos = []string{protos}
 	quicListener, err := quic.Listen(listenConn, tlsConfig,
 		&quic.Config{

@@ -28,9 +28,9 @@ import (
 	libio "github.com/fatedier/golib/io"
 	libnet "github.com/fatedier/golib/net"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
 )
 
 func init() {

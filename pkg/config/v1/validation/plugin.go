@@ -17,7 +17,7 @@ package validation
 import (
 	"errors"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
 )
 
 func ValidateClientPluginOptions(c v1.ClientPluginOptions) error {

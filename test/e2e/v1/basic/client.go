@@ -8,10 +8,10 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	clientsdk "github.com/ellight-hm-chang/slowrp/pkg/sdk/client"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
+	clientsdk "github.com/ellight-hm-chang/VORTEX_Access/pkg/sdk/client"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
 )
 
 var _ = ginkgo.Describe("[Feature: ClientManage]", func() {

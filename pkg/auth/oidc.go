@@ -22,8 +22,8 @@ import (
 	"github.com/samber/lo"
 	"golang.org/x/oauth2/clientcredentials"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
 )
 
 type OidcAuthProvider struct {

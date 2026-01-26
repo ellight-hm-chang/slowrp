@@ -27,12 +27,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ellight-hm-chang/slowrp/client"
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
+	"github.com/ellight-hm-chang/VORTEX_Access/client"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/version"
 )
 
 var (
@@ -43,15 +43,15 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./slowrpc.ini", "config file of slowrpc")
-	//rootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one slowrpc service for each file in config directory")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of slowrpc")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "./VORTEX_Access_Client.ini", "config file of VORTEX_Access_Client")
+	//rootCmd.PersistentFlags().StringVarP(&cfgDir, "config_dir", "", "", "config directory, run one VORTEX_Access_Client service for each file in config directory")
+	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of VORTEX_Access_Client")
 	//rootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", false, "strict config parsing mode, unknown fields will cause an error")
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "slowrpc",
-	Short: "slowrpc is the client of slowrp (https://github.com/ellight-hm-chang/slowrp)",
+	Use:   "VORTEX_Access",
+	Short: "VORTEX_Access",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())
@@ -87,7 +87,7 @@ func runMultipleClients(cfgDir string) error {
 			defer wg.Done()
 			err := runClient(path)
 			if err != nil {
-				fmt.Printf("slowrpc service error for config file [%s]\n", path)
+				fmt.Printf("VORTEX_Access_Client service error for config file [%s]\n", path)
 			}
 		}()
 		return nil
@@ -138,8 +138,8 @@ func startService(
 	log.InitLog(cfg.Log.To, cfg.Log.Level, cfg.Log.MaxDays, cfg.Log.DisablePrintColor)
 
 	if cfgFile != "" {
-		log.Info("start slowrpc service for config file [%s]", cfgFile)
-		defer log.Info("slowrpc service for config file [%s] stopped", cfgFile)
+		log.Info("start VORTEX_Access_Client service for config file [%s]", cfgFile)
+		defer log.Info("VORTEX_Access_Client service for config file [%s] stopped", cfgFile)
 	}
 	svr, err := client.NewService(client.ServiceOptions{
 		Common:         cfg,

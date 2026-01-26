@@ -9,12 +9,12 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/mock/server/streamserver"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/rpc"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/mock/server/streamserver"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/rpc"
 )
 
 var _ = ginkgo.Describe("[Feature: TCPMUX httpconnect]", func() {
@@ -212,8 +212,8 @@ var _ = ginkgo.Describe("[Feature: TCPMUX httpconnect]", func() {
 
 		f.RunProcesses([]string{serverConf}, []string{clientConf})
 
-		var resp string = "slowrp"
-		resp = strings.Replace(resp, "slow", "f", -1)
+		var resp string = "VORTEX_Accessrp"
+		resp = strings.Replace(resp, "VORTEX_Access", "f", -1)
 
 		framework.NewRequestExpect(f).
 			RequestModify(func(r *request.Request) {

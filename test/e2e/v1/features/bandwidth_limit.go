@@ -7,12 +7,12 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/mock/server/streamserver"
-	pluginpkg "github.com/ellight-hm-chang/slowrp/test/e2e/pkg/plugin"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/mock/server/streamserver"
+	pluginpkg "github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/plugin"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
 )
 
 var _ = ginkgo.Describe("[Feature: Bandwidth Limit]", func() {

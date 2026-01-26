@@ -21,12 +21,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
-	"github.com/ellight-hm-chang/slowrp/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/version"
+	"github.com/ellight-hm-chang/VORTEX_Access/server"
 )
 
 var (
@@ -38,16 +38,16 @@ var (
 )
 
 func init() {
-	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file of slowrps")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of slowrps")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "config file of VORTEX_Access_Server")
+	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "v", false, "version of VORTEX_Access_Server")
 	rootCmd.PersistentFlags().BoolVarP(&strictConfigMode, "strict_config", "", false, "strict config parsing mode, unknown fields will cause error")
 
 	config.RegisterServerConfigFlags(rootCmd, &serverCfg)
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "slowrps",
-	Short: "slowrps is the server of slowrp (https://github.com/ellight-hm-chang/slowrp)",
+	Use:   "VORTEX_Access_Server",
+	Short: "VORTEX_Access_Server",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if showVersion {
 			fmt.Println(version.Full())
@@ -101,16 +101,16 @@ func runServer(cfg *v1.ServerConfig) (err error) {
 	log.InitLog(cfg.Log.To, cfg.Log.Level, cfg.Log.MaxDays, cfg.Log.DisablePrintColor)
 
 	if cfgFile != "" {
-		log.Info("slowrps uses config file: %s", cfgFile)
+		log.Info("VORTEX_Access_Server uses config file: %s", cfgFile)
 	} else {
-		log.Info("slowrps uses command line arguments for config")
+		log.Info("VORTEX_Access_Server uses command line arguments for config")
 	}
 
 	svr, err := server.NewService(cfg)
 	if err != nil {
 		return err
 	}
-	log.Info("slowrps started successfully")
+	log.Info("VORTEX_Access_Server started successfully")
 	svr.Run(context.Background())
 	return
 }

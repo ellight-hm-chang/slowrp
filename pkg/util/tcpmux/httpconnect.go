@@ -24,8 +24,8 @@ import (
 
 	libnet "github.com/fatedier/golib/net"
 
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/vhost"
 )
 
 type HTTPConnectTCPMuxer struct {

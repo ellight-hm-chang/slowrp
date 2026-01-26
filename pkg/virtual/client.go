@@ -18,10 +18,10 @@ import (
 	"context"
 	"net"
 
-	"github.com/ellight-hm-chang/slowrp/client"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/client"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
 )
 
 type ClientOptions struct {

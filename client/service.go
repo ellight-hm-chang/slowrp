@@ -27,21 +27,21 @@ import (
 	"github.com/fatedier/golib/crypto"
 	"github.com/samber/lo"
 
-	"github.com/ellight-hm-chang/slowrp/client/proxy"
-	"github.com/ellight-hm-chang/slowrp/pkg/auth"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/wait"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/proxy"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/auth"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/version"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/wait"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 func init() {
-	var salt string = "slowrp"
-	salt = strings.Replace(salt, "slow", "f", -1)
+	var salt string = "VORTEX_Accessrp"
+	salt = strings.Replace(salt, "VORTEX_Access", "f", -1)
 	crypto.DefaultSalt = salt
 }
 

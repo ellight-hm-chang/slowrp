@@ -29,11 +29,11 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 	"k8s.io/apimachinery/pkg/util/yaml"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/legacy"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/legacy"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
 )
 
 var glbEnvs map[string]string
@@ -80,7 +80,7 @@ func DetectLegacyINIFormatFromFile(path string) bool {
 }
 
 func RenderWithTemplate(in []byte, values *Values) ([]byte, error) {
-	tmpl, err := template.New("slowrp").Parse(string(in))
+	tmpl, err := template.New("VORTEX_Accessrp").Parse(string(in))
 	if err != nil {
 		return nil, err
 	}

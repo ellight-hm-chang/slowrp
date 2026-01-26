@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/port"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/port"
 )
 
 const (

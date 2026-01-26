@@ -31,28 +31,28 @@ import (
 	quic "github.com/quic-go/quic-go"
 	"github.com/samber/lo"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/auth"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	modelmetrics "github.com/ellight-hm-chang/slowrp/pkg/metrics"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/nathole"
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
-	"github.com/ellight-hm-chang/slowrp/pkg/ssh"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/tcpmux"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
-	"github.com/ellight-hm-chang/slowrp/server/controller"
-	"github.com/ellight-hm-chang/slowrp/server/group"
-	"github.com/ellight-hm-chang/slowrp/server/metrics"
-	"github.com/ellight-hm-chang/slowrp/server/ports"
-	"github.com/ellight-hm-chang/slowrp/server/proxy"
-	"github.com/ellight-hm-chang/slowrp/server/visitor"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/auth"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	modelmetrics "github.com/ellight-hm-chang/VORTEX_Access/pkg/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/nathole"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/ssh"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/tcpmux"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/version"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/vhost"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/controller"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/group"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/ports"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/proxy"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/visitor"
 )
 
 const (
@@ -223,7 +223,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 	ln = svr.muxer.DefaultListener()
 
 	svr.listener = ln
-	log.Info("slowrps tcp listen on %s", address)
+	log.Info("VORTEX_Access_Server tcp listen on %s", address)
 
 	// Listen for accepting connections from client using kcp protocol.
 	if cfg.KCPBindPort > 0 {
@@ -232,12 +232,12 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 		if err != nil {
 			return nil, fmt.Errorf("listen on kcp udp address %s error: %v", address, err)
 		}
-		log.Info("slowrps kcp listen on udp %s", address)
+		log.Info("VORTEX_Access_Server kcp listen on udp %s", address)
 	}
 
 	if cfg.QUICBindPort > 0 {
-		var protos string = "slowrp"
-		protos = strings.Replace(protos, "slow", "f", -1)
+		var protos string = "VORTEX_Accessrp"
+		protos = strings.Replace(protos, "VORTEX_Access", "f", -1)
 
 		address := net.JoinHostPort(cfg.BindAddr, strconv.Itoa(cfg.QUICBindPort))
 		quicTLSCfg := tlsConfig.Clone()
@@ -250,7 +250,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 		if err != nil {
 			return nil, fmt.Errorf("listen on quic udp address %s error: %v", address, err)
 		}
-		log.Info("slowrps quic listen on %s", address)
+		log.Info("VORTEX_Access_Server quic listen on %s", address)
 	}
 
 	if cfg.SSHTunnelGateway.BindPort > 0 {
@@ -259,11 +259,11 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 			return nil, fmt.Errorf("create ssh gateway error: %v", err)
 		}
 		svr.sshTunnelGateway = sshGateway
-		log.Info("slowrps sshTunnelGateway listen on port %d", cfg.SSHTunnelGateway.BindPort)
+		log.Info("VORTEX_Access_Server sshTunnelGateway listen on port %d", cfg.SSHTunnelGateway.BindPort)
 	}
 
 	// Listen for accepting connections from client using websocket protocol.
-	var WebsocketPath string = strings.Replace(netpkg.SlowRPWebsocketPath, "slow", "f", -1)
+	var WebsocketPath string = strings.Replace(netpkg.VORTEX_AccessRPWebsocketPath, "VORTEX_Access", "f", -1)
 	websocketPrefix := []byte("GET " + WebsocketPath)
 	websocketLn := svr.muxer.Listen(0, uint32(len(websocketPrefix)), func(data []byte) bool {
 		return bytes.Equal(data, websocketPrefix)

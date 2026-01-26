@@ -27,11 +27,11 @@ import (
 	"github.com/fatedier/golib/errors"
 	libio "github.com/fatedier/golib/io"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/proto/udp"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/limit"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/proto/udp"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/limit"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
 )
 
 func init() {
@@ -133,7 +133,7 @@ func (pxy *SUDPProxy) InWorkConn(conn net.Conn, _ *msg.StartWorkConn) {
 			// first to check sudp proxy is closed or not
 			select {
 			case <-pxy.closeCh:
-				xl.Trace("slowrpc sudp proxy is closed")
+				xl.Trace("VORTEX_Access_Client sudp proxy is closed")
 				return
 			default:
 			}
@@ -164,10 +164,10 @@ func (pxy *SUDPProxy) InWorkConn(conn net.Conn, _ *msg.StartWorkConn) {
 		for rawMsg := range sendCh {
 			switch m := rawMsg.(type) {
 			case *msg.UDPPacket:
-				xl.Trace("slowrpc send udp package to slowrpc visitor, [udp local: %v, remote: %v], [tcp work conn local: %v, remote: %v]",
+				xl.Trace("VORTEX_Access_Client send udp package to VORTEX_Access_Client visitor, [udp local: %v, remote: %v], [tcp work conn local: %v, remote: %v]",
 					m.LocalAddr.String(), m.RemoteAddr.String(), conn.LocalAddr().String(), conn.RemoteAddr().String())
 			case *msg.Ping:
-				xl.Trace("slowrpc send ping message to slowrpc visitor")
+				xl.Trace("VORTEX_Access_Client send ping message to VORTEX_Access_Client visitor")
 			}
 
 			if errRet = msg.WriteMsg(conn, rawMsg); errRet != nil {
@@ -195,7 +195,7 @@ func (pxy *SUDPProxy) InWorkConn(conn net.Conn, _ *msg.StartWorkConn) {
 					return
 				}
 			case <-pxy.closeCh:
-				xl.Trace("slowrpc sudp proxy is closed")
+				xl.Trace("VORTEX_Access_Client sudp proxy is closed")
 				return
 			}
 		}

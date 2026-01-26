@@ -29,10 +29,10 @@ import (
 	quic "github.com/quic-go/quic-go"
 	"github.com/samber/lo"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 // Connector is a interface for establishing connections to the server.
@@ -87,8 +87,8 @@ func (c *defaultConnectorImpl) Open() error {
 			xl.Warn("fail to build tls configuration, err: %v", err)
 			return err
 		}
-		var portos string = "slowrp"
-		portos = strings.Replace(portos, "slow", "f", -1)
+		var portos string = "VORTEX_Accessrp"
+		portos = strings.Replace(portos, "VORTEX_Access", "f", -1)
 		tlsConfig.NextProtos = []string{portos}
 
 		conn, err := quic.DialAddr(

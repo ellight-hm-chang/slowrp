@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 type Manager struct {

@@ -7,8 +7,8 @@ import (
 	"net"
 	"strconv"
 
-	libnet "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/rpc"
+	libnet "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/rpc"
 )
 
 type Type string

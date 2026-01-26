@@ -17,8 +17,8 @@ package validation
 import (
 	"errors"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	splugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	splugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
 )
 
 var (

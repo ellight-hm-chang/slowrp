@@ -15,14 +15,14 @@
 package ssh
 
 import (
-	"github.com/ellight-hm-chang/slowrp/client/proxy"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/proxy"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
 )
 
 func createSuccessInfo(user string, pc v1.ProxyConfigurer, ps *proxy.WorkingStatus) string {
 	base := pc.GetBaseConfig()
 	out := "\n"
-	out += "slowrp (via SSH) (Ctrl+C to quit)\n\n"
+	out += "VORTEX_Accessrp (via SSH) (Ctrl+C to quit)\n\n"
 	out += "User: " + user + "\n"
 	out += "ProxyName: " + base.Name + "\n"
 	out += "Type: " + base.Type + "\n"

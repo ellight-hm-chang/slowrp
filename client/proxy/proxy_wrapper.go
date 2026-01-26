@@ -25,12 +25,12 @@ import (
 
 	"github.com/fatedier/golib/errors"
 
-	"github.com/ellight-hm-chang/slowrp/client/event"
-	"github.com/ellight-hm-chang/slowrp/client/health"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/event"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/health"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 const (

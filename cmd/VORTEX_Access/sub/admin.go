@@ -22,15 +22,15 @@ import (
 	"github.com/rodaine/table"
 	"github.com/spf13/cobra"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	clientsdk "github.com/ellight-hm-chang/slowrp/pkg/sdk/client"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	clientsdk "github.com/ellight-hm-chang/VORTEX_Access/pkg/sdk/client"
 )
 
 func init() {
 	rootCmd.AddCommand(NewAdminCommand(
 		"reload",
-		"Hot-Reload slowrpc configuration",
+		"Hot-Reload VORTEX_Access_Client configuration",
 		ReloadHandler,
 	))
 
@@ -42,7 +42,7 @@ func init() {
 
 	rootCmd.AddCommand(NewAdminCommand(
 		"stop",
-		"Stop the running slowrpc",
+		"Stop the running VORTEX_Access_Client",
 		StopHandler,
 	))
 }

@@ -6,8 +6,8 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
 )
 
 const (

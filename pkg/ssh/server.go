@@ -30,15 +30,15 @@ import (
 	flag "github.com/spf13/pflag"
 	"golang.org/x/crypto/ssh"
 
-	"github.com/ellight-hm-chang/slowrp/client/proxy"
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
-	"github.com/ellight-hm-chang/slowrp/pkg/virtual"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/proxy"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/virtual"
 )
 
 const (

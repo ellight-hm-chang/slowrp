@@ -20,8 +20,8 @@ import (
 
 	"github.com/fatedier/golib/errors"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
 )
 
 func init() {
@@ -50,7 +50,7 @@ func (pxy *XTCPProxy) Run() (remoteAddr string, err error) {
 	xl := pxy.xl
 
 	if pxy.rc.NatHoleController == nil {
-		err = fmt.Errorf("xtcp is not supported in slowrps")
+		err = fmt.Errorf("xtcp is not supported in VORTEX_Access_Server")
 		return
 	}
 	allowUsers := pxy.cfg.AllowUsers

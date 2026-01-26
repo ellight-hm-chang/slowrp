@@ -27,15 +27,15 @@ import (
 	libio "github.com/fatedier/golib/io"
 	"golang.org/x/time/rate"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/types"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/limit"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
-	"github.com/ellight-hm-chang/slowrp/server/controller"
-	"github.com/ellight-hm-chang/slowrp/server/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/types"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/limit"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/controller"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/metrics"
 )
 
 var proxyFactoryRegistry = map[reflect.Type]func(*BaseProxy) Proxy{}

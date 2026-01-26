@@ -21,8 +21,8 @@ import (
 	"os"
 	"strings"
 
-	logpkg "github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/version"
+	logpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/version"
 )
 
 var NotFoundPagePath = ""
@@ -44,8 +44,8 @@ const (
 <h1>The page you requested was not found.</h1>
 <p>Sorry, the page you are looking for is currently unavailable.<br/>
 Please try again later.</p>
-<p>The server is powered by <a href="https://github.com/ellight-hm-chang/slowrp">slowrp</a>.</p>
-<p><em>Faithfully yours, slowrp.</em></p>
+<p>The server is powered by <a href="https://www.vivotek.com">VORTEX_Access</a>.</p>
+<p><em>Faithfully yours, VORTEX_Access.</em></p>
 </body>
 </html>
 `
@@ -70,7 +70,7 @@ func getNotFoundPageContent() []byte {
 
 func NotFoundResponse() *http.Response {
 	header := make(http.Header)
-	var serverName = strings.Replace("slowrp/", "slow", "f", -1)
+	var serverName = strings.Replace("VORTEX_Accessrp/", "VORTEX_Access", "f", -1)
 	header.Set("server", serverName+version.Full())
 	header.Set("Content-Type", "text/html")
 

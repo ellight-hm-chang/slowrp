@@ -13,7 +13,7 @@ import (
 var ErrWebsocketListenerClosed = errors.New("websocket listener closed")
 
 const (
-	SlowRPWebsocketPath = "/~!slowrp"
+	VORTEX_AccessRPWebsocketPath = "/~!VORTEX_Accessrp"
 )
 
 type WebsocketListener struct {
@@ -29,7 +29,7 @@ func NewWebsocketListener(ln net.Listener) (wl *WebsocketListener) {
 	wl = &WebsocketListener{
 		acceptCh: make(chan net.Conn),
 	}
-	var WebsocketPath string = strings.Replace(SlowRPWebsocketPath, "slow", "f", -1)
+	var WebsocketPath string = strings.Replace(VORTEX_AccessRPWebsocketPath, "VORTEX_Access", "f", -1)
 	muxer := http.NewServeMux()
 	muxer.Handle(WebsocketPath, websocket.Handler(func(c *websocket.Conn) {
 		notifyCh := make(chan struct{})

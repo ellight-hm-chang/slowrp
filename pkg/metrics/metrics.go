@@ -15,7 +15,7 @@
 package metrics
 
 import (
-	"github.com/ellight-hm-chang/slowrp/pkg/metrics/aggregate"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/metrics/aggregate"
 )
 
 var (

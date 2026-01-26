@@ -17,7 +17,7 @@ package xlog
 import (
 	"sort"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
 )
 
 type LogPrefix struct {

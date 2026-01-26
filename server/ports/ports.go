@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/types"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/types"
 )
 
 const (

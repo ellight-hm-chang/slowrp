@@ -14,8 +14,8 @@ import (
 
 	libdial "github.com/fatedier/golib/net/dial"
 
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/rpc"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/rpc"
 )
 
 type Request struct {

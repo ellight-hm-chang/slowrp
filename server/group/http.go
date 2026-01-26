@@ -6,7 +6,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/vhost"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/vhost"
 )
 
 type HTTPGroupController struct {

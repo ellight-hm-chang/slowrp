@@ -20,7 +20,7 @@ import (
 
 	"gopkg.in/ini.v1"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/types"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/types"
 )
 
 type ProxyType string

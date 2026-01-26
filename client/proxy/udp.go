@@ -26,11 +26,11 @@ import (
 	"github.com/fatedier/golib/errors"
 	libio "github.com/fatedier/golib/io"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/proto/udp"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/limit"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/proto/udp"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/limit"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
 )
 
 func init() {

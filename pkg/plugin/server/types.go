@@ -15,7 +15,7 @@
 package plugin
 
 import (
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
 )
 
 type Request struct {

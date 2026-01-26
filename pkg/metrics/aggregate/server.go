@@ -15,9 +15,9 @@
 package aggregate
 
 import (
-	"github.com/ellight-hm-chang/slowrp/pkg/metrics/mem"
-	"github.com/ellight-hm-chang/slowrp/pkg/metrics/prometheus"
-	"github.com/ellight-hm-chang/slowrp/server/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/metrics/mem"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/metrics/prometheus"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/metrics"
 )
 
 // EnableMem start to mark metrics to memory monitor system.

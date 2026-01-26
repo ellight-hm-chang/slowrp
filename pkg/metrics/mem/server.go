@@ -18,9 +18,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/metric"
-	server "github.com/ellight-hm-chang/slowrp/server/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/metric"
+	server "github.com/ellight-hm-chang/VORTEX_Access/server/metrics"
 )
 
 var (

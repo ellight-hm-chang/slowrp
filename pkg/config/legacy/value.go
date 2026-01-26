@@ -46,7 +46,7 @@ func GetValues() *Values {
 }
 
 func RenderContent(in []byte) (out []byte, err error) {
-	tmpl, errRet := template.New("slowrp").Parse(string(in))
+	tmpl, errRet := template.New("VORTEX_Accessrp").Parse(string(in))
 	if errRet != nil {
 		err = errRet
 		return

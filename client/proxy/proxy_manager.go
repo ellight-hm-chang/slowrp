@@ -23,11 +23,11 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/ellight-hm-chang/slowrp/client/event"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/event"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 type Manager struct {

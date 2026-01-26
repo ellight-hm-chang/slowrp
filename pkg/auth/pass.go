@@ -15,7 +15,7 @@
 package auth
 
 import (
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
 )
 
 var AlwaysPassVerifier = &alwaysPass{}

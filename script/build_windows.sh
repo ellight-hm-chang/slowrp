@@ -23,21 +23,21 @@ export GOCACHE=$(mktemp -d)  # Use fresh temporary cache
 USE_GARBLE=${USE_GARBLE:-false}
 
 if [ "$USE_GARBLE" = "true" ]; then
-    echo "Building slowrps for Windows amd64 (with garble)..."
-    garble -seed=random build -trimpath -ldflags "${LDFLAGS}" -tags slowrps -o bin/slowrps.exe ./cmd/slowrps
-    echo "✓ slowrps.exe built successfully"
+    echo "Building VORTEX_Access_Server for Windows amd64 (with garble)..."
+    garble -seed=random build -trimpath -ldflags "${LDFLAGS}" -tags VORTEX_Access_Server -o bin/VORTEX_Access_Server.exe ./cmd/VORTEX_Access_Server
+    echo "✓ VORTEX_Access_Server.exe built successfully"
 
-    echo "Building slowrpc for Windows amd64 (with garble)..."
-    garble -seed=random build -trimpath -ldflags "${LDFLAGS}" -tags slowrpc -o bin/slowrpc.exe ./cmd/slowrpc
-    echo "✓ slowrpc.exe built successfully"
+    echo "Building VORTEX_Access for Windows amd64 (with garble)..."
+    garble -seed=random build -trimpath -ldflags "${LDFLAGS}" -tags VORTEX_Access -o bin/VORTEX_Access.exe ./cmd/VORTEX_Access
+    echo "✓ VORTEX_Access.exe built successfully"
 else
-    echo "Building slowrps for Windows amd64..."
-    go build -trimpath -ldflags "${LDFLAGS}" -tags slowrps -o bin/slowrps.exe ./cmd/slowrps
-    echo "✓ slowrps.exe built successfully"
+    echo "Building VORTEX_Access_Server for Windows amd64..."
+    go build -trimpath -ldflags "${LDFLAGS}" -tags VORTEX_Access_Server -o bin/VORTEX_Access_Server.exe ./cmd/VORTEX_Access_Server
+    echo "✓ VORTEX_Access_Server.exe built successfully"
 
-    echo "Building slowrpc for Windows amd64..."
-    go build -trimpath -ldflags "${LDFLAGS}" -tags slowrpc -o bin/slowrpc.exe ./cmd/slowrpc
-    echo "✓ slowrpc.exe built successfully"
+    echo "Building VORTEX_Access for Windows amd64..."
+    go build -trimpath -ldflags "${LDFLAGS}" -tags VORTEX_Access -o bin/VORTEX_Access.exe ./cmd/VORTEX_Access
+    echo "✓ VORTEX_Access.exe built successfully"
 fi
 
 echo ""

@@ -30,13 +30,13 @@ import (
 	quic "github.com/quic-go/quic-go"
 	"golang.org/x/time/rate"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	"github.com/ellight-hm-chang/slowrp/pkg/nathole"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/nathole"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 var ErrNoTunnelSession = errors.New("no tunnel session")
@@ -413,8 +413,8 @@ func (qs *QUICTunnelSession) Init(listenConn *net.UDPConn, raddr *net.UDPAddr) e
 	if err != nil {
 		return fmt.Errorf("create tls config error: %v", err)
 	}
-	var protos string = "slowrp"
-	protos = strings.Replace(protos, "slow", "f", -1)
+	var protos string = "VORTEX_Accessrp"
+	protos = strings.Replace(protos, "VORTEX_Access", "f", -1)
 	tlsConfig.NextProtos = []string{protos}
 	quicConn, err := quic.Dial(context.Background(), listenConn, raddr, tlsConfig,
 		&quic.Config{

@@ -5,14 +5,14 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/ellight-hm-chang/slowrp/server/metrics"
+	"github.com/ellight-hm-chang/VORTEX_Access/server/metrics"
 )
 
 const (
 	serverSubsystem = "server"
 )
 
-var metricsnamespace = "slowrp"
+var metricsnamespace = "VORTEX_Accessrp"
 
 var ServerMetrics metrics.ServerMetrics = newServerMetrics()
 
@@ -57,14 +57,14 @@ func (m *serverMetrics) AddTrafficOut(name string, proxyType string, trafficByte
 }
 
 func newServerMetrics() *serverMetrics {
-	namespace := strings.Replace(metricsnamespace, "slow", "f", -1)
+	namespace := strings.Replace(metricsnamespace, "VORTEX_Access", "f", -1)
 
 	m := &serverMetrics{
 		clientCount: prometheus.NewGauge(prometheus.GaugeOpts{
 			Namespace: namespace,
 			Subsystem: serverSubsystem,
 			Name:      "client_counts",
-			Help:      "The current client counts of slowrps",
+			Help:      "The current client counts of VORTEX_Access_Server",
 		}),
 		proxyCount: prometheus.NewGaugeVec(prometheus.GaugeOpts{
 			Namespace: namespace,

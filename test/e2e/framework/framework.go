@@ -11,9 +11,9 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	"github.com/ellight-hm-chang/slowrp/test/e2e/mock/server"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/port"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/process"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/mock/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/port"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/process"
 )
 
 type Options struct {

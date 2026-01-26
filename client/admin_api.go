@@ -28,12 +28,12 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/ellight-hm-chang/slowrp/client/proxy"
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	netpkg "github.com/ellight-hm-chang/slowrp/pkg/util/net"
+	"github.com/ellight-hm-chang/VORTEX_Access/client/proxy"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1/validation"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	netpkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/net"
 )
 
 type GeneralResponse struct {
@@ -91,20 +91,20 @@ func (svr *Service) apiReload(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
+		log.Warn("reload VORTEX_Access_Client proxy config error: %s", res.Msg)
 		return
 	}
 	if _, err := validation.ValidateAllClientConfig(cliCfg, proxyCfgs, visitorCfgs); err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
+		log.Warn("reload VORTEX_Access_Client proxy config error: %s", res.Msg)
 		return
 	}
 
 	if err := svr.UpdateAllConfigurer(proxyCfgs, visitorCfgs); err != nil {
 		res.Code = 500
 		res.Msg = err.Error()
-		log.Warn("reload slowrpc proxy config error: %s", res.Msg)
+		log.Warn("reload VORTEX_Access_Client proxy config error: %s", res.Msg)
 		return
 	}
 	log.Info("success reload conf")
@@ -211,7 +211,7 @@ func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request) {
 
 	if svr.configFilePath == "" {
 		res.Code = 400
-		res.Msg = "slowrpc has no config file path"
+		res.Msg = "VORTEX_Access_Client has no config file path"
 		log.Warn("%s", res.Msg)
 		return
 	}
@@ -220,7 +220,7 @@ func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request) {
 	if err != nil {
 		res.Code = 400
 		res.Msg = err.Error()
-		log.Warn("load slowrpc config file error: %s", res.Msg)
+		log.Warn("load VORTEX_Access_Client config file error: %s", res.Msg)
 		return
 	}
 	res.Msg = string(content)
@@ -257,7 +257,7 @@ func (svr *Service) apiPutConfig(w http.ResponseWriter, r *http.Request) {
 
 	if err := os.WriteFile(svr.configFilePath, body, 0o644); err != nil {
 		res.Code = 500
-		res.Msg = fmt.Sprintf("write content to slowrpc config file error: %v", err)
+		res.Msg = fmt.Sprintf("write content to VORTEX_Access_Client config file error: %v", err)
 		log.Warn("%s", res.Msg)
 		return
 	}

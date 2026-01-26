@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ellight-hm-chang/slowrp/client"
-	httppkg "github.com/ellight-hm-chang/slowrp/pkg/util/http"
+	"github.com/ellight-hm-chang/VORTEX_Access/client"
+	httppkg "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/http"
 )
 
 type Client struct {

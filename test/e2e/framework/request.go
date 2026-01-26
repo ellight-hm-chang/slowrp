@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"net/http"
 
-	flog "github.com/ellight-hm-chang/slowrp/pkg/util/log"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
+	flog "github.com/ellight-hm-chang/VORTEX_Access/pkg/util/log"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
 )
 
 func SpecifiedHTTPBodyHandler(body []byte) http.HandlerFunc {

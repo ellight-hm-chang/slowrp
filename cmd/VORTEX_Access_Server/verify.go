@@ -20,8 +20,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config"
-	"github.com/ellight-hm-chang/slowrp/pkg/config/v1/validation"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1/validation"
 )
 
 func init() {
@@ -33,7 +33,7 @@ var verifyCmd = &cobra.Command{
 	Short: "Verify that the configures is valid",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if cfgFile == "" {
-			fmt.Println("slowrps: the configuration file is not specified")
+			fmt.Println("VORTEX_Access_Server: the configuration file is not specified")
 			return nil
 		}
 		svrCfg, _, err := config.LoadServerConfig(cfgFile, strictConfigMode)
@@ -50,7 +50,7 @@ var verifyCmd = &cobra.Command{
 			fmt.Println(err)
 			os.Exit(1)
 		}
-		fmt.Printf("slowrps: the configuration file %s syntax is ok\n", cfgFile)
+		fmt.Printf("VORTEX_Access_Server: the configuration file %s syntax is ok\n", cfgFile)
 		return nil
 	},
 }

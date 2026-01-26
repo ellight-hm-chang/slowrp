@@ -10,10 +10,10 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/onsi/ginkgo/v2"
 
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/mock/server/httpserver"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/request"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/mock/server/httpserver"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/request"
 )
 
 var _ = ginkgo.Describe("[Feature: HTTP]", func() {
@@ -287,15 +287,15 @@ var _ = ginkgo.Describe("[Feature: HTTP]", func() {
 			type = "http"
 			localPort = %d
 			customDomains = ["normal.example.com"]
-			requestHeaders.set.x-from-where = "slowrp"
+			requestHeaders.set.x-from-where = "VORTEX_Accessrp"
 			`, localPort)
-		proxies = strings.Replace(proxies, "slow", "f", -1)
+		proxies = strings.Replace(proxies, "VORTEX_Access", "f", -1)
 		clientConf += proxies
 
 		f.RunProcesses([]string{serverConf}, []string{clientConf})
 
-		var resp string = "slowrp"
-		resp = strings.Replace(resp, "slow", "f", -1)
+		var resp string = "VORTEX_Accessrp"
+		resp = strings.Replace(resp, "VORTEX_Access", "f", -1)
 		// not set auth header
 		framework.NewRequestExpect(f).Port(vhostHTTPPort).
 			RequestModify(func(r *request.Request) {

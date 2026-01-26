@@ -19,7 +19,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/util"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/util"
 )
 
 type BackoffFunc func(previousDuration time.Duration, previousConditionError bool) time.Duration

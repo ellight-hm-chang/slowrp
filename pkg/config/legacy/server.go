@@ -19,7 +19,7 @@ import (
 
 	"gopkg.in/ini.v1"
 
-	legacyauth "github.com/ellight-hm-chang/slowrp/pkg/auth/legacy"
+	legacyauth "github.com/ellight-hm-chang/VORTEX_Access/pkg/auth/legacy"
 )
 
 type HTTPPluginOptions struct {

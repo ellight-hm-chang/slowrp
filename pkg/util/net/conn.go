@@ -25,7 +25,7 @@ import (
 	"github.com/fatedier/golib/crypto"
 	quic "github.com/quic-go/quic-go"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 type ContextGetter interface {

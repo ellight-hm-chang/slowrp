@@ -30,7 +30,7 @@ func DialHookWebsocket(protocol string, host string) libdial.AfterHookFunc {
 		if host == "" {
 			host = addr
 		}
-		var WebsocketPath string = strings.Replace(SlowRPWebsocketPath, "slow", "f", -1)
+		var WebsocketPath string = strings.Replace(VORTEX_AccessRPWebsocketPath, "VORTEX_Access", "f", -1)
 		addr = protocol + "://" + host + WebsocketPath
 		uri, err := url.Parse(addr)
 		if err != nil {

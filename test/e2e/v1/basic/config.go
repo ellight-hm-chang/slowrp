@@ -5,9 +5,9 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/pkg/port"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/port"
 )
 
 var _ = ginkgo.Describe("[Feature: Config]", func() {

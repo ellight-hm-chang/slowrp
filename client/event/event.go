@@ -3,7 +3,7 @@ package event
 import (
 	"errors"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
 )
 
 var ErrPayloadType = errors.New("error payload type")

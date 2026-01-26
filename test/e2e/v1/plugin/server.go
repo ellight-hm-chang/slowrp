@@ -6,11 +6,11 @@ import (
 
 	"github.com/onsi/ginkgo/v2"
 
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/server"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework"
-	"github.com/ellight-hm-chang/slowrp/test/e2e/framework/consts"
-	pluginpkg "github.com/ellight-hm-chang/slowrp/test/e2e/pkg/plugin"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/server"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework"
+	"github.com/ellight-hm-chang/VORTEX_Access/test/e2e/framework/consts"
+	pluginpkg "github.com/ellight-hm-chang/VORTEX_Access/test/e2e/pkg/plugin"
 )
 
 var _ = ginkgo.Describe("[Feature: Server-Plugins]", func() {

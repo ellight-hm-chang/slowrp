@@ -19,8 +19,8 @@ import (
 
 	"github.com/samber/lo"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/types"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/types"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
 )
 
 func Convert_ClientCommonConf_To_v1(conf *ClientCommonConf) *v1.ClientCommonConfig {

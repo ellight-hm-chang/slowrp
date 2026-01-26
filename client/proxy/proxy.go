@@ -29,13 +29,13 @@ import (
 	pp "github.com/pires/go-proxyproto"
 	"golang.org/x/time/rate"
 
-	"github.com/ellight-hm-chang/slowrp/pkg/config/types"
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
-	"github.com/ellight-hm-chang/slowrp/pkg/msg"
-	plugin "github.com/ellight-hm-chang/slowrp/pkg/plugin/client"
-	"github.com/ellight-hm-chang/slowrp/pkg/transport"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/limit"
-	"github.com/ellight-hm-chang/slowrp/pkg/util/xlog"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/config/types"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/msg"
+	plugin "github.com/ellight-hm-chang/VORTEX_Access/pkg/plugin/client"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/transport"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/limit"
+	"github.com/ellight-hm-chang/VORTEX_Access/pkg/util/xlog"
 )
 
 var proxyFactoryRegistry = map[reflect.Type]func(*BaseProxy, v1.ProxyConfigurer) Proxy{}

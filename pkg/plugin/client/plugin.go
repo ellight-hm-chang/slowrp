@@ -23,7 +23,7 @@ import (
 	"github.com/fatedier/golib/errors"
 	pp "github.com/pires/go-proxyproto"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
 )
 
 // Creators is used for create plugins to handle connections.

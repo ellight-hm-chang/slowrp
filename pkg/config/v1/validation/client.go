@@ -21,7 +21,7 @@ import (
 
 	"github.com/samber/lo"
 
-	v1 "github.com/ellight-hm-chang/slowrp/pkg/config/v1"
+	v1 "github.com/ellight-hm-chang/VORTEX_Access/pkg/config/v1"
 )
 
 func ValidateClientCommonConfig(c *v1.ClientCommonConfig) (Warning, error) {
